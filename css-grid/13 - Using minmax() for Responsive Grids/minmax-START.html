@@ -6,6 +6,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../assets/style.css">
   <title>Using minmax() for Responsive Grids!</title>
+
+  <style>
+      .container {
+        display: grid;
+        grid-gap: 20px;
+        border: 10px solid var(--yellow);
+
+        /* 
+          MinMax can help with reducing the clutter of media 
+          queries. By calculating the width minimums and maximums 
+          you can create responsive layouts in one line of code!
+
+            grid-template-columns: repeat(auto-fill, 100px)
+            This would cause an overflow in the content, vs scaling the content
+
+          TIP: Auto-Fit might be better used to prevent the infinite implicits!
+        */
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        
+        /*
+          Fit-Content Function (Clamp)
+
+          Max-Width (Height if row) that the content should be
+
+            grid-template-columns: fit-content(100px) 150px 150px 150px;
+        */        
+      }
+    </style>
 </head>
 
 <body>
@@ -14,16 +42,7 @@
     <div class="item item2">Bonjour!</div>
     <div class="item item3">Item 03</div>
     <div class="item item4">Item 04</div>
-  </div>
-
-  <style>
-    .container {
-      display: grid;
-      grid-gap: 20px;
-      border: 10px solid var(--yellow);
-      grid-template-columns: repeat(auto-fill, 150px);
-    }
-  </style>
+  </div>  
 </body>
 
 </html>
