@@ -6,6 +6,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../assets/style.css">
   <title>CSS Grid Alignment + Centering!</title>
+
+  <style>
+    /*
+      ++Dealing with content++
+      justify-items:
+      align-items:
+
+      ++Dealing with space++
+      justify-content:
+      align-content:
+
+      ++Override case-by-case++
+      align-self:
+      justify-self:
+
+      justify-* is row axis
+      align-* is column axis
+    */
+
+    .container {
+      display: grid;
+      grid-gap: 20px;
+      height: 500px;
+      /* grid-template-columns: repeat(10, 1fr); */
+      grid-template-columns: repeat(5, 100px);
+      /* grid-template-rows: repeat(5, 100px); */
+      
+      /* justify-items: start; */
+      /* justify-items: end; */
+      /* justify-items: center; */
+      /* justify-items: stretch; */
+
+      /* align-items: start; */
+      /* align-items: end; */
+      /* align-items: center; */
+      /* align-items: stretch; */
+
+      /*
+        Shorthand for both; browser support warning!
+      */
+      place-items: stretch stretch;
+      justify-content: space-between;
+      align-content: space-between;
+    }
+
+    .itm {
+      background: white;
+    }
+
+    .itm5 {
+      justify-self: center;
+      align-self: center;
+    }
+  </style>
 </head>
 
 <body>
@@ -20,7 +74,7 @@
     <div class="itm itm8">8</div>
     <div class="itm itm9">9</div>
     <div class="itm itm10">10</div>
-    <div class="itm itm11">11</div>
+    <!-- <div class="itm itm11">11</div>
     <div class="itm itm12">12</div>
     <div class="itm itm13">13</div>
     <div class="itm itm14">14</div>
@@ -49,30 +103,8 @@
     <div class="itm itm37">37</div>
     <div class="itm itm38">38</div>
     <div class="itm itm39">39</div>
-    <div class="itm itm40">40</div>
-  </div>
-
-  <style>
-    /*
-      justify-items:
-      align-items:
-
-      justify-content:
-      align-content:
-
-      align-self:
-      justify-self:
-
-      justify-* is row axis
-      align-* is column axis
-    */
-
-    .container {
-      display: grid;
-      grid-gap: 20px;
-      grid-template-columns: repeat(10, 1fr);
-    }
-  </style>
+    <div class="itm itm40">40</div> -->
+  </div>  
 </body>
 
 </html>
